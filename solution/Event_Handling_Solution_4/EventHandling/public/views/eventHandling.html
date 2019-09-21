@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Event Handling</title>
+    <style>
+        /* We set up the styles for the page */
+
+        /* The body where all of our content will reside */
+        #body {
+            background-color: #24272a;
+            text-align: center;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ffffff;
+        }
+
+        /* The 'header' for our page */
+        #header {
+            font-size: 40px;
+        }
+
+        /* The section where our emoji images will go */
+        #emojis {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+            padding: 10px;
+            mix-blend-mode: multiply;
+        }
+
+        /* The divisions between each emoji */
+        #emojis > div {
+            padding: 5px;
+            mix-blend-mode: multiply;
+        }
+
+    </style>
+</head>
+
+<body id="body">
+    <!-- Our 'header' -->
+    <div id="header">
+        <p>Event Handling!</p>
+    </div>
+    <p>Expressive Sentences:</p>
+    <!-- This is where our emoji images will go -->
+    <div id="emojis">
+    </div>
+    <br>
+    <!-- This is where users input their sentence -->
+    <div id="expressiveSentences">
+        <label for="input">Input: </label>
+        <textarea id="textinput" name="input" placeholder="Enter a sentence!" autocomplete="off"></textarea><br>
+    </div>
+
+    <!-- We write the JS script that will run on our page -->
+    <script async type="module">
+        // We import our js
+        import {convertString} from "/js/Emoji.js";
+
+        // We refer to our user's input
+        // and add an eventlistener for when a key is released
+        // The eventlistener calls searchStrings()
+        var textinput = document.querySelector("#textinput");
+        textinput.addEventListener("keyup", searchStrings, false);
+
+        // This function will take the users input and pass it to the
+        // imported function convertString, which will return an array
+        // containing the names of the emoji images to display
+        function searchStrings() {
+            var input = document.getElementById('textinput').value;
+            var result = convertString(input);
+            if (result != null) {
+                displayEmojis(result);
+            }
+            else {
+                var element = document.getElementById('emojis');
+                element.innerHTML = "";
+            }
+        }
+
+        // This function will actually display the emojis by creating
+        // a new image element and div for every emoji image name passed
+        // to it
+        function displayEmojis(input) {
+            var element = document.getElementById('emojis');
+            element.innerHTML = "";
+            for (let word of input) {
+                var image = document.createElement("IMG");
+                var division = document.createElement("div");
+                image.src = "/emojis/" + word;
+                element.appendChild(image);
+                element.appendChild(division);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Ajax &raquo; NodeJS</title>
+  <meta charset="utf-8"/>  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>  
+</head>
+<body>
+    <h1>Favorite fruits the NodeJS enjoys:</h1>    
+    <ul></ul>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(() => {
+            fetch("http://localhost:3000/")
+             .then(response => { return response.json(); })
+             .then(fruits => {
+                 fruits.forEach(fruit => {
+                     $("ul").append(`<li>${fruit}</li>`)
+                 });                    
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Module Test</title>
+</head>
+<body>
+    <div>
+        ceiling 1.7 is <text id = 'ceiling'></text>
+    </div>
+    <p>&nbsp;</p>
+    <div>
+        cube 1.7 is <text id = 'cube'></text>
+    </div>
+    <p>&nbsp;</p>
+    <div>
+        floor 1.7 is <text id = 'floor'></text>
+    </div>
+    <p>&nbsp;</p>
+    <div>
+       100 mod 3 is <text id = 'mod'></text>
+    </div>
+    <p>&nbsp;</p>
+    <div>
+        squareRoot of 1.7 is <text id = 'squareRoot'></text>
+    </div>
+    <p>&nbsp;</p>
+    <script type="module" crossOrigin>
+        import {m} from './Math.js';
+        // import {m} from 'http://127.0.0.1:8080/Math.js';
+        let helper = ['ceiling','cube','floor','mod','squareRoot'];
+        
+        for (let i of helper){
+            if(i =='mod'){
+                document.getElementById(i).innerHTML = m[i](100,3);
+            }else{   
+                document.getElementById(i).innerHTML = m[i](1.7);
+            }
+                
+        }
+        
+    
+    </script>
+</body>
+</html>

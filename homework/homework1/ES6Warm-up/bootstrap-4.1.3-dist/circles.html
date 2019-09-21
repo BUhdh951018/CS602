@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Three circles</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="circle.js"></script>
+    <style>
+        #message1, #message2, #message3{
+            font-size: 200px;
+            font-family: 'Microsoft Yahei';
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>My First Homework about ES6</h1>
+        <p style="color:black">Please let your browser just on the left 2/3 side of the screen!(It's suitable for iPhone
+            X screen)</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="circle1" draggable="true"
+                    style="width:150px;height:150px;background-color:#0000ff;border-radius:50%;">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="circle2" draggable="true"
+                    style="width:150px;height:150px;background-color:#ff0000;border-radius:50%;">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="circle3" draggable="true"
+                    style="width:150px;height:150px;background-color:#00ff00;border-radius:50%;">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div id="message1">0</div>
+            </div>
+            <div class="col-md-4">
+                <div id="message2">0</div>
+            </div>
+            <div class="col-md-4">
+                <div id="message3">0</div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
