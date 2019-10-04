@@ -1,0 +1,153 @@
+/* https://www.color-hex.com/color-palette/83288 */
+/* https://stackoverflow.com/questions/15852122/hex-transparency-in-colors */
+
+:root {
+    --main-bg-color: #f2ecfd;
+    --main-font-color: #6735a7;
+    --border-color: #6735a74D;
+    --button-bg-color: #6735a74D;
+    --sec-bg-color: #8878a199;
+    --tert-bg-color: #ffffff;
+    --main-font-size: 15px;
+    --medium-font-size: 18px;
+    --large-font-size: 30px;
+    --main-border-width: 2px;
+    --thick-border-width: 5px;
+}
+
+.body {
+    background-color: var(--main-bg-color);
+    text-align: center;
+    font-size: var(--main-font-size);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--main-font-color);
+    font-weight: bold;
+}
+
+.header {
+    font-size: var(--large-font-size);
+    font-weight: bold;
+}
+
+.headerButton {
+    background-color: var(--button-bg-color);
+    border-width: var(--main-border-width);
+    border-color: var(--border-color);
+    color: var(--main-font-color);
+    font-size: var(--medium-font-size);
+    font-weight: bold;
+}
+
+.button {
+    background-color: var(--button-bg-color);
+    border-width: var(--main-border-width);
+    border-color: var(--border-color);
+    color: var(--main-font-color);
+    font-size: var(--main-font-size);
+    font-weight: bold;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--sec-bg-color);
+}
+
+#popupAddPassword {
+    z-index: 1;
+}
+
+#popupDisplayPassword {
+    z-index: 1;
+}
+
+#popupMessage {
+    z-index: 2;
+}
+
+.popupContent {
+    background-color: var(--main-bg-color);
+    margin-left: 10%;
+    margin-bottom: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    padding: 3%;
+    width: 74%;
+    border: var(--thick-border-width) solid var(--border-color);
+    color: var(--main-font-color);
+    font-size: var(--main-font-size);
+    font-weight: bold;
+}
+
+#popupContentAddPasword {
+    height: 50%;
+}
+
+#popupContentDisplayPasword {
+    height: 30%;
+}
+
+#popupContentMessager {
+    height: 20%;
+}
+
+.close {
+    color: var(--main-font-color);
+    float: right;
+    font-size: var(--large-font-size);
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--main-font-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    overflow: auto;
+}
+
+table {
+    table-layout: fixed;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: var(--tert-bg-color);
+    color: var(--main-font-color);
+}
+
+th, td {
+    border: var(--main-border-width) solid var(--border-color);
+}
+
+th {
+    text-align: center;
+}
+
+th:empty {
+    background-color: var(--main-bg-color);
+    border: var(--main-border-width) solid var(--main-bg-color);
+}
+
+td {
+    font-weight: normal;
+    word-wrap: break-word;
+}
+
+td:empty {
+    background-color: var(--main-bg-color);
+    border: var(--main-border-width) solid var(--main-bg-color);
+}

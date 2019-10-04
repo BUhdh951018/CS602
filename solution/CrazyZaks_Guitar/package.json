@@ -1,0 +1,12 @@
+{
+  "name": "crazyzaks_guitar",
+  "version": "1.0.0",
+  "description": "A Guitar Store app which shows all the purchases.",
+  "main": "app.js",
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "mongoose": "*"
+  },
+  "license": "ISC"
+}

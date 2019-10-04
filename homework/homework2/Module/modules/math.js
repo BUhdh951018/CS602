@@ -10,10 +10,10 @@ export function floor(x) {
     return Math.floor(x);
 }
 
-export function mod(x,y) {
+export function mod(x, y) {
     return x-parseInt((x/y))*y;
 }
 
 export function squareRoot(x) {
-    return x*x;
+    return Math.sqrt(x);
 }
