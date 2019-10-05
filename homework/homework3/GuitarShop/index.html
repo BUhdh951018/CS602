@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Guitar Shop</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Guitar Shop!</h1>
+
+        <div class="row">
+            <div class="col-xs-3">
+                <div>
+                    <form class="bs-example bs-example-form" role="form">
+                        <div class="input-group">
+                            <span class="input-group-addon">ID</span>
+                            <input type="text" id="id" class="form-control" placeholder="Enter an ID of a guitar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xs-5">
+                <button id="getGuitar" class="btn btn-primary">Get Guitar Details</button>
+                <button id="deleteGuitar" class="btn btn-danger">Delete a Guitar</button>
+                <button id="addGuitar" class="btn btn-primary">Add a Guitar to Cart</button>
+            </div>
+            <div class="col-xs-4">
+                <button id="getAllGuitar" class="btn btn-success">Show All Guitar Details</button>
+                <button id="getCart" class="btn btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Show Checkout</button>
+            </div>
+        </div>
+
+        <hr/>
+
+        <div id="showOneGuitar"></div>
+        <div id="showAllGuitar"></div>
+        <div id="deleteComplete"></div>
+        <div id="showCheckout"></div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+
+            // get all guitar details
+            $("#getAllGuitar").click(() => {
+                fetch('http://localhost:3000/crazyzaks/guitars', {
+                    method: "GET",
+                    mode: "cors",
+                    redirect: "follow",
+                    headers: new Headers({"Content-Type": "text/plain"})
+                })
+                .then(response => {
+                    return response.json();
+                })
+                .then(guitars => {
+                    $("#showOneGuitar").html("");
+                    $("#deleteComplete").html("");
+                    $("#showCheckout").html("");
+                    $("#showAllGuitar").html(
+                        "<h2>Guitars</h2><table class='table table-border'></table>"
+                    );
+                    $("#showAllGuitar table").append(
+                        "<thead><tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th><th>Price</th></tr></thead>"
+                    );
+                    guitars.forEach(guitar => {
+                        const {id, name, description, img, price} = guitar;
+                        $("#showAllGuitar table").append(
+                            `<tr><td>${id}</td>
+                                <td><img src='${img}' height='205' width='82'></img></td>
+                                <td>${name}</td><td>${description}</td><td>${price}</td></tr>`
+                        );
+                    });
+                })
+                .catch(errors => {
+                    console.log(`Could not post new entry: ${errors}`);
+                });
+            });
+
+            // delete one item from cart
+            $("deleteGuitar").click(() => {
+                var id = $("#id").val();
+                fetch('http://loaclhost:3000/crazyzaks/guitars/'+id, {
+                    method: "DELETE",
+                    mode: "cors",
+                    redirect: "follow",
+                    headers: new Headers({"Content-type": "text/plain"})
+                })
+                .then(response => {
+                    return response.json();
+                })
+                .then(message => {
+                    $("#showOneGuitar").html("");
+                    $("#showAllGuitar").html("");
+                    $("#showCheckout").html("");
+                    $("#deleteComplete").html(`<h2>${message}</h2>`);
+                })
+                .catch(errors => {
+                    console.log(`Could not post new entry: ${errors}`);
+                });
+            });
+
+            // get one guitar detail
+            $("#getGuitar").click(() => {
+                var id = $("#id").val();
+                fetch('http://localhost:3000/crazyzaks/guitars/'+id, {
+                    method: "GET",
+                    mode: "cors",
+                    redirect: "follow",
+                    headers: new Headers({"Content-Type": "text/plain"})
+                })
+                .then(response => {
+                    return response.json();
+                })
+                .then(guitar => {
+                    $("#deleteComplete").html("");
+                    $("#showAllGuitar").html("");
+                    $("#showCheckout").html("");
+                    $("#showOneGuitar").html(
+                        "<h2>Guitar details:</h2>"
+                    );
+                    $("#showOneGuitar").append(`${guitar}`);
+                })
+                .catch(errors => {
+                    console.log(`Could not post new entry: ${errors}`);
+                });
+            });
+
+            // put a guitar to cart
+            $("#addGuitar").click(() => {
+                var id = $("#id").val();
+                fetch('http://localhost:3000/crazyzaks/cart/add/' + id, {
+                    method: "PUT",
+                    mode: "cors",
+                    redirect: "follow",
+                    headers: new Headers({"Content-Type": "text/plain"})
+                })
+                .then(response => {
+                    return response.json();
+                })
+                .then(message => {
+                    $("#deleteComplete").html("");
+                    $("#showAllGuitar").html("");
+                    $("#showCheckout").html("");
+                    $("#showOneGuitar").html(`<h2>${message}</h2>`);
+                })
+                .catch(errors => {
+                    console.log(`Could not post new entry: ${errors}`);
+                });
+            });
+
+            // post checkout
+            $("#getCart").click(() => {
+                fetch('http://localhost:3000/crazyzaks/checkout', {
+                    method: "POST",
+                    mode: "cors",
+                    redirect: "follow",
+                    headers: new Headers({"Content-Type": "text/plain"})
+                })
+                .then(response => {
+                    return response.json();
+                })
+                .then(guitars => {
+                    $("#deleteComplete").html("");
+                    $("#showAllGuitar").html("");
+                    $("#showOneGuitar").html("");
+
+                    if (guitars.length == 0) {
+                        $("#showCheckout").html("<h2>Cart is empty!</h2>");
+                    } else {
+                        $("#showCheckout").html(
+                            "<h2>User cart:</h2><table class='table table-border'></table>"
+                        );
+                        $("#showCheckout").append(`<tr><td>${id}</td>
+                                <td><img src='${img}' height='205' width='82'></img></td>
+                                <td>${name}</td><td>${description}</td><td>${price}</td></tr>`)
+                    }
+                })
+                .catch(errors => {
+                    console.log(`Could not post new entry: ${errors}`);
+                });
+            })
+        });
+    </script>
+</body>
+
+</html>
