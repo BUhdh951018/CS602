@@ -2,7 +2,7 @@ var Book = require('./book.js');
 
 function insert() {
     var book = new Book({
-        bootitle : 'NodeJS',
+        booktitle : 'NodeJS',
         author : 'hdh',
         yearpublish: '2019',
         quantity: '2',
@@ -20,3 +20,17 @@ function insert() {
 }
 
 insert();
+
+function read() {
+    var wherestr = {'booktitle': 'NodeJS'};
+
+    Book.find(wherestr, (err, res) => {
+        if (err) {
+            console.log('Error: ' + err);
+        } else {
+            console.log('Res: ' + res);
+        }
+    })
+}
+
+read();

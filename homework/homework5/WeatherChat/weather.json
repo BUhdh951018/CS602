@@ -1,0 +1,32 @@
+[
+    {
+        "day" : "1",
+        "weather": "slowly wind and some rain",
+        "tempH": "13C",
+        "tempL": "11C"
+    },
+    {
+        "day" : "2",
+        "weather": "some cloud, slowly wind and some rain",
+        "tempH": "13C",
+        "tempL": "11C"
+    },
+    {
+        "day" : "3",
+        "weather": "some cloud and some rain",
+        "tempH": "14C",
+        "tempL": "10C"
+    },
+    {
+        "day" : "4",
+        "weather": "sunny",
+        "tempH": "21C",
+        "tempL": "8C"
+    },
+    {
+        "day" : "5",
+        "weather": "some cloud some rain",
+        "tempH": "18C",
+        "tempL": "9C"
+    }
+]

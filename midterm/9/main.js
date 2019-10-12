@@ -1,0 +1,1 @@
+const name = require(__dirname + '/data/test/names.json');

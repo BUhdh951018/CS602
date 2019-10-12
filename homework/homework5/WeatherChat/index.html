@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Weather Chat</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script>
+        var socket = io("http://localhost:8000");
+        socket.on("news", (msg) => {
+            document.getElementById('showSocket').innerHTML = msg;
+            socket.emit('other event', 'Hello World!');
+        });
+    </script>
+    <div class="container">
+        <h1>Weather Chat</h1>
+        <div id="show5Day"></div>
+        <div>
+            <h2>Socket field</h2>
+            <p id="showSocket"></p>
+        </div>
+        <br>
+        <button id="12hour" class="btn btn-primary">Show 12 hour weather forcast</button>
+        <button id="5day" class="btn btn-primary">Show 5 days weather forcast</button>
+        <button id="search" class="btn btn-primary">Search for the location key</button>
+        Location: <input type="text" name="location" id="location">
+        <hr>
+
+        <div id="show12hour"></div>
+        <div id="showlocationkey"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $("#5day").click(() => {
+                fetch('http://localhost:8000/indices', {
+                        method: "GET",
+                        mode: "cors",
+                        redirect: "follow",
+                        headers: new Headers({
+                            "Content-Type": "text/plain"
+                        })
+                    })
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(weathers => {
+                        $("#show12hour").html('');
+                        $("#show5Day").html(
+                            "<h2> 5 Day Forecast</h2><table class='table table-border'></table> "
+                        );
+                        $("#show5Day table").append(
+                            "<thead><tr><th>DAY</th><th>Weather</th><th>High temperature</th><th>Low Temperature</th></tr></thead>"
+                        );
+                        weathers.forEach(wea => {
+                            const {
+                                day,
+                                weather,
+                                high,
+                                low
+                            } = wea;
+                            $("#show5Day table").append(
+                                `<tr><td>${day}</td>
+                                <td>${weather}</td> <td>${high}</td><td>${low}</td></tr>`
+                            );
+                        });
+                    })
+                    .catch(errors => {
+                        console.log(`Could not post new entry: ${errors}`);
+                    });
+            });
+
+            $("#12hour").click(() => {
+                fetch('http://localhost:8000/today', {
+                        method: "GET",
+                        mode: "cors",
+                        redirect: "follow",
+                        headers: new Headers({
+                            "Content-Type": "text/plain"
+                        })
+                    })
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(hours => {
+                        $("#show5Day").html("");
+                        $("#show12hour").html(
+                            "<h2> 12 hour Forecast</h2><table class='table table-border'></table> "
+                        );
+                        $("#show12hour table").append(
+                            "<thead><tr><th>HOUR</th><th>Temperature</th><th>Rain Probability</th></tr></thead>"
+                        );
+                        hours.forEach(ho => {
+                            const {
+                                hour,
+                                temp,
+                                rain
+                            } = ho;
+                            $("#show12hour table").append(
+                                `<tr><td>${hour}</td>
+                                <td>${temp}</td> <td>${rain}</td></tr>`
+                            );
+                        });
+                    })
+                    .catch(errors => {
+                        console.log(`Could not post new entry: ${errors}`);
+                    });
+            });
+
+            $("#search").click(() => {
+                var location = $("#location").val;()
+                fetch('http://localhost:8000/search'+location, {
+                        method: "GET",
+                        mode: "cors",
+                        redirect: "follow",
+                        headers: new Headers({
+                            "Content-Type": "text/plain"
+                        })
+                    })
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(location => {
+                        $("#show5Day").html("");
+                        $("#show12hour").html("");
+                        $("#showlocationkry").html(`${location}`);
+                    })
+                    .catch(errors => {
+                        console.log(`Could not post new entry: ${errors}`);
+                    });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

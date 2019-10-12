@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Question 2</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Question 2</h1>
+        <div class="row">
+            <form action="http://localhost:3000/data" method="POST">
+                Username: <input type="text" name="name" id="name">
+                Email Address: <input type="text" name="email" id="email">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <button id="getAll" class="btn btn-primary">Get All Data</button>
+                Enter name:<input type="text" name="name" id="name1">
+                <button id="getOne" class="btn btn-primary"> Get one </button>
+            </div>
+        </div>
+    
+        <hr>
+
+        <div id="show"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+
+            $("#getAll").click(() => {
+                fetch('http://localhost:3000/all', {
+                    method: "GET",
+                    mode: "cors",
+                    redirect: "follow",
+                    headers: new Headers({ "Content-Type": "text/plain"})
+                })
+                .then(response => {
+                    return response.json();
+                })
+                .then(user => {
+                    $("#show").html(
+                        "<h2>User details:</h2>"
+                    );
+                    $("#show").append(`${user}`);
+                })
+                .catch(errors => {
+                    console.log(`Could not post new entry: ${errors}`);
+                });
+            });
+
+            $("#getOne").click(() => {
+                var name = $("#name1").val();
+                fetch('http://localhost:3000/one/' + name, {
+                    method: "GET",
+                    mode: "cors",
+                    redirect: "follow",
+                    headers: new Headers({ "Content-Type": "text/plain"})
+                })
+                .then(response => {
+                    return response.json();
+                })
+                .then(user => {
+                    $("#show").html(
+                        "<h2>User email:</h2>"
+                    );
+                    $("#show").append(`${user}`);
+                })
+                .catch(errors => {
+                    console.log(`Could not post new entry: ${errors}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
