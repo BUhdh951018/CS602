@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>PHP with Form Submissions</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Homework: PHP with From Submissions</h2>
+
+                <form>
+                    Username: <input type="text" name="name" id="name">
+                    <p id="Err1"></p>
+                    <!--HTML5 auto check the email value-->
+                    Email: <input type="email" name="email" id="email">
+                    <p id="Err3"></p>
+                    <!--HTML5 auto set the number that just can be number-->
+                    Phone Number: <input type="number" name="Phone" id="phone">
+                    <p id="Err2"></p>
+                    Gender: <input type="radio" name="gender" id="gender" value="male">male
+                    <input type="radio" name="gender" id="gender" value="female">female
+                    <p id="Err4"></p>
+                    <button id="submit1">Check</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#submit1").click(function(){
+               
+               var data = {};
+               data.username = $('#name').val();
+               data.email = $('#email').val();
+               data.phone = $('#phone').val();
+               data.gender = $('#gender').val();
+               
+               console.log(data);
+               $.ajax({
+                   url: 'respond.php',   
+                   type: 'post',         
+                   contentType: 'application/x-www-form-urlencoded',
+                   dataType: 'json',     
+                   data: data,           
+                   success: function(data){  
+                       
+                       if(data.flag == 0) {
+                           alert(data.msg);
+                           
+                       }else{
+                            var temp = JSON.stringify(data.err);
+                            var number = data.flag;
+                            alert(data.err + data.flag);
+                        
+                            if (number == 1) 
+                                $('#Err1').html(temp);
+                            else if (number == 2)
+                                $('#Err2').html(temp);
+                            else if (number == 3)
+                                $('#Err3').html(temp);
+                            else 
+                                $('#Err4').html(temp);
+                       }
+                   },
+                   error: function(){  
+                       alert('Error!');
+                   }
+               });
+           });
+    </script>
+</body>
+</html>
