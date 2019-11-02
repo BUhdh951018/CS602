@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validation</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Rongshi Wang (rongshiw@bu.edu)">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .content{
+            width:800px;
+            margin:50px auto;
+        }
+        input{
+            border:1px solid #a9a9a9;
+            height:40px;
+            line-height:40px;
+            width:550px;
+            margin-bottom:20px;
+            padding-left:5px;
+        }
+        .btn{
+            background:green;
+            color:#fff;
+            font-size:14px;
+            width:110px;
+            line-height:34px;
+            border:none 0;
+            cursor:pointer;
+            margin:20px 20px 0 0;
+        }
+        .big{
+            color: #333333;
+            font-size: 40px;
+            font-weight: 900;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 2%;
+        }
+        h5{
+            font-family: 'Roboto',sans-serif;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+<div class="content"> 
+
+    <h1 class="big">Validation with PHP using ajax</h1>
+    
+    <form action="" method="" style="margin-top: 2%;">
+    <h5>(Username must be at least 6 characters)</h5>
+    <input type="text" name="name" id="name" placeholder="Username"/>
+    
+    <h5>(Email must follow correct email format)</h5>
+    <input type="text" name="email" id="email" placeholder="Email"/>
+    
+    <h5>(Password must be at least 8 characters with 1 uppercase letter)</h5>
+    <input type="text" name="pass" id="password" placeholder="Password"/>
+    
+    <p><input class="btn" type="submit" value="Validate" onclick="myPost()"/></p>
+    </form>
+    
+    <h3 id="data"></h3>
+    
+</div>
+
+<script>
+    function myPost(){
+        var Username = $('#name').val();
+        var Email = $('#email').val();
+        var Password = $('#password').val();
+        
+        $.ajax({
+            url: "ajax.php",
+            method: "POST",
+            dataType: "json",
+            data: {
+                'userName': Username,
+                'email': Email,
+                'password': Password
+            },
+            success: function (data) {
+                alert(data);
+            }
+        });
+    }
+</script>
+</body>
+</html>

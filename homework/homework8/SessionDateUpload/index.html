@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <title>Using sessions dates and upload</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Homework: Using sessions dates and upload</h2>
+
+                <form>
+                    Username: <input type="text" name="username" id="username">
+                
+                    password: <input type="text" name="password" id="password">
+                
+                    <button id="submit1">Log in</button>
+                </form>
+                <div id="message"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#submit1").click(function(event){
+            event.preventDefault(); 
+            var Username = $('#username').val();
+            var Password = $('#password').val();
+               
+            $.ajax({
+                url: 'authenticate.php',   
+                type: 'POST',         
+                   //contentType: 'application/x-www-form-urlencoded',
+                dataType: 'json',     
+                data: {
+                    'userName': Username,
+                    'password': Password
+                },           
+                success: function(data){  
+                    //var message = JSON.stringify(data);
+                    console.log(data);
+                    //$('#message').html(message['results']);
+                    if (data.success == "1") {
+                        window.location.href = 'welcome.php';
+                    } else if (data.success == "2") {
+                        window.close();
+                    } else {
+                        alert(data.msg);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
