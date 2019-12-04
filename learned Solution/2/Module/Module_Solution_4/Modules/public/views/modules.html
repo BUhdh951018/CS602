@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Modules</title>
+    <style>
+        /* We set up the styles for the page */
+
+        /* The body where all of our content will reside */
+        #body {
+            background-color: #24272a;
+            text-align: center;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ffffff;
+        }
+
+        /* The 'header' for our page */
+        #header {
+            font-size: 40px;
+        }
+
+        /* The section where our module buttons will go */
+        #moduleButtons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* The divisions between each module button */
+        #moduleButtons > div {
+            padding: 5px;
+        }
+
+
+    </style>
+</head>
+
+<body id="body">
+    <!-- Our 'header' -->
+    <div id="header">
+        <p>Modules!</p>
+    </div>
+    <p>Single Number Modules:</p>
+    <!-- This is where our user inputs data and sees output -->
+    <div id="singleNumberIO">
+        <label for="inputA">Input: </label>
+        <input type="number" name="inputA" placeholder="Numerical Input" autocomplete="off"></input><br>
+        <label for="outputA">Output: </label>
+        <input type="number" name="outputA" placeholder="Result" disabled></input>
+    </div>
+    <br>
+    <!-- This is where our module buttons will go -->
+    <div id="moduleButtons">
+        <div><button id="getCeiling">Round Up</button></div>
+        <div><button id="getCube">Cube</button></div>
+        <div><button id="getFloor">Round Down</button></div>
+        <div><button id="getSquareRoot">Square Root</button></div>
+    </div>
+    <p>Double Number Module:</p>
+    <!-- This is where our user inputs data and sees output -->
+    <div id="doubleNumberIO">
+        <label for="inputB1">Input X: </label>
+        <input type="number" name="inputB1" placeholder="Numerical Input" autocomplete="off"></input><br>
+        <label for="inputB2">Input Y: </label>
+        <input type="number" name="inputB2" placeholder="Numerical Input" autocomplete="off"></input><br>
+        <label for="outputB">Output: </label>
+        <input type="textbox" name="outputB" placeholder="Result" disabled></input>
+    </div>
+    <!-- This is where our module buttons will go -->
+    <div id="moduleButtons">
+        <div><button id="getMod">X Modulus Y</button></div>
+    </div>
+    
+    <!-- We write the JS script that will run on our page -->
+    <script async type="module">
+        // We import our js
+        import {ceiling, cube, floor, mod, squareRoot} from "/js/Math.js";
+
+        // We refer to each button and assign it a function to be called when clicked
+        document.getElementById('getCeiling').onclick = getCeiling;
+        document.getElementById('getCube').onclick = getCube;
+        document.getElementById('getFloor').onclick = getFloor;
+        document.getElementById('getSquareRoot').onclick = getSquareRoot;
+        document.getElementById('getMod').onclick = getMod;
+        
+        // These are our functions that will take the input from the user, use the appropriate imported
+        // function, and display the output to the user
+        function getCeiling() {
+            var input = document.getElementsByName('inputA')[0].value;
+            var output = ceiling(input);
+            document.getElementsByName('outputA')[0].value = output;
+        }
+
+        function getCube() {
+            var input = document.getElementsByName('inputA')[0].value;
+            var output = cube(input);
+            document.getElementsByName('outputA')[0].value = output;
+        }
+        
+        function getFloor() {
+            var input = document.getElementsByName('inputA')[0].value;
+            var output = floor(input);
+            document.getElementsByName('outputA')[0].value = output;
+        }
+        
+        function getSquareRoot() {
+            var input = document.getElementsByName('inputA')[0].value;
+            var output = squareRoot(input);
+            document.getElementsByName('outputA')[0].value = output;
+        }
+        
+        function getMod() {
+            var input1 = document.getElementsByName('inputB1')[0].value;
+            var input2 = document.getElementsByName('inputB2')[0].value;
+            var output = mod(input1, input2);
+            document.getElementsByName('outputB')[0].value = output;
+        }
+    </script>
+</body>
+</html>

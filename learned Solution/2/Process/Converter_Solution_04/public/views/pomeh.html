@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Process Object, Modules, and Event Handling</title>
+    <style>
+        /* We set up the styles for the page */
+
+        /* The body where all of our content will reside */
+        #body {
+            background-color: #24272a;
+            text-align: center;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ffffff;
+        }
+
+        /* The 'header' for our page */
+        #header {
+            font-size: 40px;
+        }
+
+        /* The section where our module buttons will go */
+        #moduleButtons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* The divisions between each module button */
+        #moduleButtons > div {
+            padding: 5px;
+        }
+
+    </style>
+</head>
+
+<body id="body">
+    <!-- Our 'header' -->
+    <div id="header">
+        <p>Process Object, Modules, and Event Handling!</p>
+    </div>
+    <p>Unit Conversion:</p>
+    <div id="unitConversion">
+        <!-- This is where our user inputs data and sees output -->
+        <label for="input">Input: </label>
+        <input type="number" name="input" placeholder="Inches" autocomplete="off"></input><br>
+        <label for="output">Output: </label>
+        <input name="output" placeholder="Result" disabled></input>
+    </div>
+    <br>
+    <!-- This is where our module buttons will go -->
+    <div id="moduleButtons">
+        <div><button id="getCentimeters">cm</button></div>
+        <div><button id="getMeters">m</button></div>
+        <div><button id="getMillimeters">mm</button></div>
+    </div>
+
+    <!-- We write the JS script that will run on our page -->
+    <script async type="module">
+        // We import our js
+        import {centimeters, meters, millimeters} from "/js/UnitConversion.js";
+        
+        // We refer to each button and assign it a function to be called when clicked
+        document.getElementById('getCentimeters').onclick = getCentimeters;
+        document.getElementById('getMeters').onclick = getMeters;
+        document.getElementById('getMillimeters').onclick = getMillimeters;
+
+        // These are our functions that will take the input from the user, use the appropriate imported
+        // function, and display the output to the user
+        function getCentimeters() {
+            var input = document.getElementsByName('input')[0].value;
+            var output = centimeters(input);
+            document.getElementsByName('output')[0].value = output;
+        }
+
+        function getMeters() {
+            var input = document.getElementsByName('input')[0].value;
+            var output = meters(input);
+            document.getElementsByName('output')[0].value = output;
+        }
+
+        function getMillimeters() {
+            var input = document.getElementsByName('input')[0].value;
+            var output = millimeters(input);
+            document.getElementsByName('output')[0].value = output;
+        }
+    </script>
+</body>
+</html>
