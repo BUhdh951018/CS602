@@ -1,0 +1,21 @@
+{
+  "name": "danderson_assignment3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-memcached": "^1.0.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "pug": "2.0.0-rc.4"
+  },
+  "devDependencies": {},
+  "description": ""
+}

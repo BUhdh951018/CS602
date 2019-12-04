@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Password Validator using PHP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body style="padding:20px;">
+
+<h1 class="font-italic text-center">Password Validator</h1>
+<h3 class="text-center" >Enter a username and password to see if your password is valid.</h3>
+<form id="userForm" method="post" action="main.php" >
+<div class="form-group">
+    <label for="username">Username: </label>
+    <input type="text" class="form-control" id="username" name="username" placeholder="Usernames must be at least 6 characters.">
+</div>
+<p id="userMessage"></p>
+<div class="form-group">
+    <label for="password">Password: </label>
+    <input type="password" class="form-control" id="password" name="password" 
+        placeholder="Passwords must have a minimum length of 8 characters, at least 1 uppercase character, and 1 meta-character." >
+</div>
+<p id="passwordMessage"></p>
+<div class="form-group">
+    <label for="secondPassword">Re-enter Password: </label>
+    <input type="password" class="form-control" id="secondPassword" name="secondPassword" placeholder="The re-entered password must match the password." >
+</div>
+<p id="secondPasswordMessage"></p>
+    <input type="submit" class="btn btn-primary" name="submit" value="Submit"><br /><br />
+</form>
+<div id="message" ></div>
+    <script type="text/javascript">
+            $('#userForm').on('submit', (event) => {
+                event.preventDefault(); 
+
+                $.ajax({
+                    type: $('#userForm').attr("method"),
+                    url: $('#userForm').attr("action"),  
+                    data: $('#userForm').serialize(),
+                    //contentType: 'application/json', 
+                    dataType:'text', //or HTML, JSON, etc.
+                    success: function(response){
+                        let messages = $.parseJSON(response); 
+                        $("#userMessage").html(messages['validUser']);
+                        $("#passwordMessage").html(messages['validPassword']);
+                        $("#secondPasswordMessage").html(messages['validSecondPass']);
+                        $("#message").html(messages['validLogin']); 
+                    }
+                });
+            });
+    </script>
+</body>
+</html>

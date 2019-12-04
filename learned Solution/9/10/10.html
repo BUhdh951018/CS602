@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>week10_assignment</title>
+
+</head>
+
+<body>
+    <div>Please enter: </div>
+
+    <form id='userForm'>
+        <input type='text' id="email" name='email' placeholder='email' />
+        <input type='text' id="firstname" name='firstname' placeholder='firstname' />
+        <input type='text' id="lastname" name='lastname' placeholder='lastname' />
+        <input type='text' id="phone" name='phone' placeholder='phone' />
+        <div id="theop" style="display: none">
+            <input type="radio" name="option" value="get">Retrieve
+            <input type="radio" name="option" value="update">Update
+            <input type="radio" name="option" value="delete">Delete
+        </div>
+
+        <div><input type='submit' value='Submit' /></div>
+    </form>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+    <script>
+        $(document).ready(function () {
+            $('#userForm').submit(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '10.php',
+                    data: $(this).serialize()
+                })
+                    .done(function (data) {
+                        //var the = eval("(" + data + ")");
+                        console.log(data);
+                        $("#theop").show();
+                        $("#email").val("");
+                        $("#firstname").val("");
+                        $("#lastname").val("");
+                        $("#phone").val("");
+
+
+                    })
+                    .fail(function () {
+                        alert("Posting failed.");
+                    });
+                return false;
+            });
+
+        });
+    </script>
+</body>
+
+</html>
