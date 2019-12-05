@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="transTable">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South American</title>
+    <title>Colombia</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="../css/mdb.min.css" rel="stylesheet">
+    <link href="../../css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <script src="../../js/angular16.js"></script>
+    <script src="colombia.js"></script>
     <style>
         body {
             height: 2000px;
@@ -97,10 +99,8 @@
         }
 
         #content {
-            margin-left: 300px;
             height: 2000px;
             width: 1000px;
-            margin-right: 300px;
         }
 
         .content_title {
@@ -121,11 +121,11 @@
     </style>
 </head>
 
-<body>
+<body ng-controller="TableController">
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark elegant-color-dark">
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="../index.html" style="margin-left:300px">South American</a>
+        <a class="navbar-brand" href="../SouthAmerican.html" style="margin-left:300px">Colombia</a>
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
             aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -167,35 +167,34 @@
                     <p class="underline">Suriname&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
                         &nbsp;&nbsp;<a href=""><i class="fa fa-plane"></i></a></p>
                 </a>
-                <a href="SouthAmerican/Colombia.html">
+                <a href="Colombia.html">
                     <p class="underline">Colombia&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
-                        &nbsp;&nbsp;<a href="SouthAmerican/Trans/Colombia.html"><i class="fa fa-plane"></i></a></p>
+                        &nbsp;&nbsp;<a href=""><i class="fa fa-plane"></i></a></p>
                 </a>
-                <a href="SouthAmerican/Ecuador.html">
+                <a href="Ecuador.html">
                     <p class="underline">Ecuador&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
-                        &nbsp;&nbsp;<a href="SouthAmerican/Trans/Ecuador.html"><i class="fa fa-plane"></i></a></p>
+                        &nbsp;&nbsp;<a href="Trans/Ecuador.html"><i class="fa fa-plane"></i></a></p>
                 </a>
-                <a href="">
+                <a href="Peru.html">
                     <p class="underline">Peru&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
-                        &nbsp;&nbsp;<a href="SouthAmerican/Trans/Peru.html"><i class="fa fa-plane"></i></a>
+                        &nbsp;&nbsp;<a href=""><i class="fa fa-plane"></i></a>
                     </p>
                 </a>
             </div>
             <div class="col-md-2">
                 <p></p>
                 <br>
-                <a href="">
+                <a href="Chile.html">
                     <p class="underline">Chile&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
-                        &nbsp;&nbsp;<a href="SouthAmerican/Trans/Chile.html"><i class="fa fa-plane"></i></a></p>
+                        &nbsp;&nbsp;<a href=""><i class="fa fa-plane"></i></a></p>
                 </a>
-                <a href="SouthAmerican/Bolivia.html">
+                <a href="Bolivia.html">
                     <p class="underline">Bolivia&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
-                        &nbsp;&nbsp;<a href="SouthAmerican/Trans/Bolivia.html"><i class="fa fa-plane"></i></a></p>
+                        &nbsp;&nbsp;<a href="Trans/Bolivia.html"><i class="fa fa-plane"></i></a></p>
                 </a>
                 <a href="">
-                    <p class="underline">Uruguay&nbsp;<i class="fa fa-angle-right"
-                            aria-hidden="true"></i>
-                        &nbsp;&nbsp;<a href="SouthAmerican/Trans/Uruguay.html"><i class="fa fa-plane"></i></a></p>
+                    <p class="underline">Uruguay&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
+                        &nbsp;&nbsp;<a href=""><i class="fa fa-plane"></i></a></p>
                 </a>
                 <a href="">
                     <p class="underline">&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -223,8 +222,7 @@
                     <p class="underline">TAME&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
                 <a href="https://www.starperu.com/es/#">
-                    <p class="underline">Star Perú&nbsp;<i class="fa fa-angle-right"
-                            aria-hidden="true"></i></p>
+                    <p class="underline">Star Perú&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
             </div>
             <div class="col-md-2">
@@ -234,8 +232,7 @@
                     <p class="underline">Peruvian Airlines&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
                 <a href="https://www.skyairline.com/english">
-                    <p class="underline">Sky Airline&nbsp;<i class="fa fa-angle-right"
-                            aria-hidden="true"></i></p>
+                    <p class="underline">Sky Airline&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
                 <a href="https://jetsmart.com/cl/es/">
                     <p class="underline">JetSmart&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
@@ -256,16 +253,16 @@
                     </p>
                 </a>
                 <a href="https://www.aerolineas.com.ar/">
-                    <p class="underline">Aerolíneas Argentinas&nbsp;<i class="fa fa-angle-right"
-                            aria-hidden="true"></i></p>
-                </a>
-                <a href="https://www.aircentury.com/en/">
-                    <p class="underline">Surinam Airways&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
+                    <p class="underline">Aerolíneas Argentinas&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </p>
                 </a>
                 <a href="https://www.flyslm.com/en/">
-                    <p class="underline">Fly All Ways&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
+                    <p class="underline">Surinam Airways&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
                 <a href="https://flyallways.com/">
+                    <p class="underline">Fly All Ways&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
+                </a>
+                <a href="">
                     <p class="underline">FlyMontserrat&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
                     </p>
                 </a>
@@ -280,164 +277,155 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 top2_title">
-                        <h2>South American</h2>
+                        <h2>Colombia</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container" id="content">
-        <div class="content_title">
-            <h1>Map of Carribbean</h1>
-            <div id="map"></div>
+    <div class="container-fluid" id="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content_title">
+                    <h1>Domestic Transportations</h1>
+                    <div>
+                        <table class="table table-bordered" id="table">
+                            <thead>
+                                <tr>
+                                    <th width="150px">Traveling Option</th>
+                                    <th width="15px">Traveling number</th>
+                                    <th>Departure</th>
+                                    <th>Arrive</th>
+                                    <th>Aireline</th>
+                                    <th>Aircraft</th>
+                                    <th>Price</th>
+                                    <th width="150px">Show on the map</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="path in paths">
+                                    <td ng-if="!$index" rowspan="{{paths.length}}" style="vertical-align:middle">
+                                        {{path.name}}</td>
+                                    <td>{{$index + 1}}</td>
+                                    <td>{{path.departure}}</td>
+                                    <td>{{path.arrive}}</td>
+                                    <td>{{path.airline}}</td>
+                                    <td>{{path.aircraft}}</td>
+                                    <td>{{path.price|currency}}</td>
+                                    <td style="vertical-align:middle">
+                                        <button type="button" class="btn btn-primary" style="margin:0;margin-left:10px;"
+                                            onclick="addLine(this)">show</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="map"></div>
+                </div>
+            </div>
         </div>
-        <div class="content_title">
-            <h1>Wuzhizhou Island</h1>
-            <p>Wuzhizhou Island is located in Haitang Bay in the north of Sanya City. It is opposite to Nanwan Monkey
-                Island in the
-                north and Yalong Bay in the first bay of Meiyutianxia in the south. Wuzhizhou Island is 2.7 kilometers
-                away from
-                the coastline and has a radius of 1.48 square kilometers. It is irregularly butterfly-shaped, with a
-                length of
-                1,400 meters from east to west and 1,100 meters from north to south.
-                It is 30 kilometers away from Sanya City and 38 kilometers away from Phoenix Airport. It is close to the
-                expressway
-                from Haikou to Sanya. The location is superior and the transportation is convenient. Wuzhizhou Island is
-                one of the
-                few small islands with fresh water resources and rich vegetation around Hainan Island. There are more
-                than 2,000
-                kinds of plants and a wide variety.</p>
-            <div class="img"><img src="../img/hainan/4.jpg" alt=""></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content_title">
+                    <h1>International Transportations</h1>
+
+                    <h2>From the United State to Colombia</h2>
+                    <iframe src="InnerMap/US_Colombia.html" frameborder="1" height="600" width="970"></iframe>
+                    <h2>From the Colombia to Ecuador</h2>
+                    <iframe src="InnerMap/Colombia_EC.html" frameborder="1" height="600" width="970"></iframe>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="../js/popper.min.js"></script>
+    <script type="text/javascript" src="../../js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <script type="text/javascript" src="../../js/mdb.min.js"></script>
 
     <script>
         var map;
+        var infowindow;
+        //var geocoder;
 
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 5.5,
+                zoom: 6,
                 center: {
-                    lat: 19,
-                    lng: -69
+                    lat: 5,
+                    lng: -70
                 },
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
 
-            var flightPlanCoordinates = [{
-                    lat: 25.038889,
-                    lng: -77.466111,
-                    code: 'Bahamas'
-                }, /*NAS*/
-                {
-                    lat: 21.773611,
-                    lng: -72.265833,
-                    code: 'Turks and Caicos Islands'
-                }, /*PLS*/
-                {
-                    lat: 18.58,
-                    lng: -72.2925,
-                    code: 'Haiti'
-                }, /*PAP*/
-                {
-                    lat: 17.935556,
-                    lng: -76.7875,
-                    code: 'Jamaica'
-                }, /*KIN*/
-                {
-                    lat: 18.431944,
-                    lng: -69.671944,
-                    code: 'Dominican Republic'
-                }, /*SDQ*/
-                {
-                    lat: 18.439167,
-                    lng: -66.001944,
-                    code: 'Puerto Rico'
-                }, /*SJU*/
-                {
-                    lat: 18.337222,
-                    lng: -64.973333,
-                    code: 'US Virgin'
-                }, /*STT*/
-                {
-                    lat: 18.445556,
-                    lng: -64.543056,
-                    code: 'UK Virgin'
-                }, /*EIS*/
-                {
-                    lat: 18.040833,
-                    lng: -63.109444,
-                    code: 'Sint Maarten'
-                }, /*SXM*/
-                {
-                    lat: 17.311389,
-                    lng: -62.718611,
-                    code: 'Saint Kitts and Nevis'
-                }, /*SKB*/
-                {
-                    lat: 17.136667,
-                    lng: -61.793056,
-                    code: 'Antigua and Barbuda'
-                }, /*ANU*/
-                {
-                    lat: 16.791389,
-                    lng: -62.193333,
-                    code: 'Montserrat'
-                }, /*MNI*/
-                {
-                    lat: 15.546944,
-                    lng: -61.3,
-                    code: 'Dominica'
-                }, /*DOM*/
-                {
-                    lat: 13.074722,
-                    lng: -59.4925,
-                    code: 'Barbados'
-                }, /*BGI*/
-                {
-                    lat: 12.004167,
-                    lng: -61.786111,
-                    code: 'Grenada'
-                }, /*GND*/
-            ];
+            infowindow = new google.maps.InfoWindow();
+            //geocoder = new google.maps.Geocoder();
 
-            var infowindow = new google.maps.InfoWindow();
-
-            for (var i = 0; i < 15; i++) {
-
-                var currentPath = [];
-                currentPath.push(flightPlanCoordinates[i]);
-                var temp = flightPlanCoordinates[i].code;
-
-                //var location = new google.maps.LatLng(currentPath.lat, currentPath.lng);
-                var marker = new google.maps.Marker({
-                    position: flightPlanCoordinates[i],
-                    map: map,
-                    title: flightPlanCoordinates[i].code
-                });
-                addContent(marker, temp, infowindow);
-            }
         }
 
-        function addContent(marker, temp, infowindow) {
-            var contentString = '<div>' + '<a href="Carribbean/Trans/' + temp + '.html" style="color:black">' + temp +
-                '</a>' + '</div>';
+        function addLine(event) {
+            var geocoder = new google.maps.Geocoder();
+            var index = event.parentNode.parentNode.rowIndex;
+            geocodePlaceId(geocoder, index);
+        }
 
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent(contentString);
+        function geocodePlaceId(geocoder, index) {
+            var currentPath = [];
+            if (index == 1) {
+                var departure = document.getElementById('table').rows[index].cells[2].innerHTML;
+                var arrive = document.getElementById('table').rows[index].cells[3].innerHTML;
+            } else {
+                var departure = document.getElementById('table').rows[index].cells[1].innerHTML;
+                var arrive = document.getElementById('table').rows[index].cells[2].innerHTML;
+            }
+
+            geocoder.geocode({
+                'address': departure
+            }, function (results, status) {
+                if (status === 'OK') {
+                    addMarker(results[0]);
+                    currentPath.push(results[0].geometry.location.toJSON());
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+
+            geocoder.geocode({
+                'address': arrive
+            }, function (results, status) {
+                if (status === 'OK') {
+                    addMarker(results[0]);
+                    currentPath.push(results[0].geometry.location.toJSON());
+                    var flightPath = new google.maps.Polyline({
+                        path: currentPath,
+                        geodesic: true,
+                        strokeColor: '#FF0000',
+                        strokeOpacity: 1,
+                        strokeWeight: 1
+                    });
+                    flightPath.setMap(map);
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }
+
+        function addMarker(place) {
+            var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location,
+                title: place.formatted_address
+            });
+            marker.addListener('click', function () {
+                infowindow.setContent(place.formatted_address);
                 infowindow.open(map, marker);
-            })
+            });
         }
     </script>
 

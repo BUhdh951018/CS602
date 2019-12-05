@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cathay Pacific Airways</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -63,7 +63,7 @@
         }
         /*top*/
         #top{
-            background: url(../img/4.jpg);
+            background: url(../img/cathay/1.jpg);
             height:377px;
         }
         .top2{
@@ -81,10 +81,17 @@
             margin-left: 50px;
         }
         #content{
-            
+            margin-left:300px;
             height:2000px;
             width:1000px;
+            margin-right:300px;
+        }
+        .content_title{
+            margin-top:50px;
             font-family: 'Roboto Slab', serif;
+        }
+        .img{
+            text-align:center;
         }
     </style>
 </head>
@@ -93,7 +100,7 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark elegant-color-dark">
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="../index.html" style="margin-left:300px">Journey Log</a>
+        <a class="navbar-brand" href="index.html" style="margin-left:300px">Cathay Pacific Airways</a>
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
             aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -170,7 +177,7 @@
                 <a>
                     <p class="underline">Sichuan Airlines&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
-                <a>
+                <a href="delta.html">
                     <p class="underline">Delta Air Lines&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
                 <a>
@@ -186,7 +193,7 @@
                 <a>
                     <p class="underline">Alaska Airlines&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
-                <a>
+                <a href="cathay.html">
                     <p class="underline">Cathay Pacific Airways&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
                 <a>
@@ -219,71 +226,26 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 top2_title">
-                        <h2>Journey Log</h2>
+                        <h2>Cathay Pacific Airways</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid" id="content" style="margin-top:100px">
-        <form action="">
-            <h3>Write your log</h3>
-            <div class="row">
-                <div class="input-group input-group-lg col-md-12" style="margin-top:10px">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">DATE</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">FLIGHT#</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">DEP-ARR</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                </div>
-                <div class="input-group input-group-lg col-md-12" style="margin-top:10px">
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">FLIGHT WITH</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                </div>
-                <div class="input-group input-group-lg col-md-12" style="margin-top:10px">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">SEAT#</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">CABIN CLASS</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                </div>
-                <div class="input-group input-group-lg col-md-12" style="margin-top:10px">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">DEP GATE</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">ARR GATE</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                </div>
-            </div>
-        </form>
+    <div class="container" id="content">
+
     </div>
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="../js/popper.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
 
     <script>
         $(document).ready(function () {

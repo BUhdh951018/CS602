@@ -8,11 +8,11 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href="../css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
@@ -63,7 +63,7 @@
         }
         /*top*/
         #top{
-            background: url(img/zhangjiajie/1.jpeg);
+            background: url(../img/4.jpg);
             height:377px;
         }
         .top2{
@@ -81,17 +81,10 @@
             margin-left: 50px;
         }
         #content{
-            margin-left:300px;
-            height:2300px;
+            
+            height:2000px;
             width:1000px;
-            margin-right:300px;
-        }
-        .content_title{
-            margin-top:50px;
             font-family: 'Roboto Slab', serif;
-        }
-        .img{
-            text-align:center;
         }
     </style>
 </head>
@@ -100,7 +93,7 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark elegant-color-dark">
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="index.html" style="margin-left:300px">Zhangjiajie</a>
+        <a class="navbar-brand" href="../index.html" style="margin-left:300px">Journey Log</a>
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
             aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -133,13 +126,13 @@
             <div class="col-md-1"></div>
             <div class="col-md-2">
                 <p class="nav_p">JOURNEY</p>
-                <a href="https://www.google.com">
+                <a href="hainan.html">
                     <p class="underline">Hainan&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
-                <a href="">
+                <a href="changbai.html">
                     <p class="underline">Changbai Mountains&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
-                <a href="">
+                <a href="zhangjiajie.html">
                     <p class="underline">Zhangjiajie&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
                 <a href="">
@@ -209,10 +202,10 @@
             <div class="panel_slide"></div>
             <div class="col-md-2">
                 <p class="nav_p">JOURNEY&FLIGHT LOG</p>
-                <a href="https://www.google.com">
+                <a href="journey.php">
                     <p class="underline">Journey Log&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
-                <a>
+                <a href="flight.php">
                     <p class="underline">Flight Log&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
             </div>
@@ -226,7 +219,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 top2_title">
-                        <h2>Zhangjiajie</h2>
+                        <h2>Journey Log</h2>
                     </div>
                 </div>
             </div>
@@ -234,62 +227,83 @@
     </div>
 
     <div class="container" id="content">
-        <div class="content_title">
-            <h1>Tianmen Mountain</h1>
-            <p>Tianmen Mountain is a mountain located within Tianmen Mountain National Park, Zhangjiajie, in the northwestern part
-                of Hunan Province, China.<br/>
-                A cablecar was constructed in 2005 by the French company Poma from nearby Zhangjiajie railway station to the top
-                of the mountain. Tianmen Mountain Cableway is claimed in tourist publications as the "longest passenger cableway of
-                high mountains in the world", with 98 cars and a total length of 7,455 m (24,459 ft) and ascent of 1,279 m (4,196
-                ft) The highest gradient is 37 degrees. Tourists can walk on kilometres of paths built onto the cliff face at the
-                top of the mountain, including sections with glass floors. An 11 km (7 mi) road with 99 bends also reaches the top
-                of the mountain and takes visitors to Tianmen cave, a natural hole in the mountain of a height of 131.5 m (431.4
-                ft).<br/>
-                A large temple is also located on the summit with chairlift or footpath access. The original temple here was built
-                in the Tang Dynasty. Today a more recent construction with Tang dynasty architecture occupies the site and includes
-                a vegetarian restaurant in the 10000 sq mi of setting.
-            </p>
-            <div class="img"><img src="img/zhangjiajie/2.jpg" alt="" weight="850" width="650"></div>
-        </div>
-        <div class="content_title">
-            <h1>Bailong Tianti</h1>
-            <p>The Bailong Tianti is magnificent, with a vertical height difference of 335 meters and a running height of 326
-                meters. It consists of a 154-meter mountain shaft and a 172-meter-high steel structure derrick. It uses three
-                double-layer full-exposure sightseeing and parallel operation. Currently enrolled in the Guinness World RecordsTM
-                with the “Highest Outdoor Elevator” honor, it is the perfect combination of natural beauty and artificial wonders.
-                The completion of Bailong Elevator realizes the goal of “upstream mountain, living under the mountain”, and pushes
-                the beautiful scenery of Yuanjiajie, Jinbianxi, Tianxia First Bridge and Ecstasy from behind the scenes to the
-                front desk, solving the traffic that has plagued the scenic spot for many years. Bottleneck problems, practice has
-                proved that the construction of Bailong ladder is very important.</p>
-            <div class="img"><img src="img/zhangjiajie/3.jpg" alt="" weight="850" width="650"></div>
-        </div>
-        <div class="content_title">
-            <h1>Wulingyuan</h1>
-            <p>Wulingyuan is a scenic and historical site in the Wulingyuan District of
-                south-central China's Hunan Province. It was inscribed as a UNESCO World Heritage Site in 1992. It is noted for
-                more than 3,000 quartzite sandstone pillars and peaks across most of the site, many over 200 metres (660 ft) in
-                height, along with many ravines and gorges with attractive streams, pools, lakes, rivers and waterfalls.[1] It
-                features 40 caves, many with large calcite deposits, and two natural bridges, Xianrenqiao (Bridge of the Immortals)
-                and Tianqiashengkong (Bridge Across the Sky).<br/>
-                The site is situated between 29°16′0″N 110°22′0″E and 29°24′0″N 110°41′0″E in Zhangjiajie City and lies about 270
-                kilometres (170 mi) to the northwest of Changsha, the capital of Hunan Province. The park covers an area of 690
-                square kilometers (266 square miles). Wulingyuan forms part of the Wuling Mountain Range. The scenic area
-                consists of four national parks, which are the Zhangjiajie National Forest Park, Suoxi Valley Nature Reserve,
-                Tianzi Mountain Nature Reserve and the recently added Yangjiajie Scenic Area. Overall there are over 560 attraction
-                sights to view.</p>
-            <div class="img"><img src="img/zhangjiajie/4.jpg" alt="" weight="850" width="650"></div>
+        <div style="margin-top:30px">
+            <?php
+
+            //ini_set("display_errors", "on");
+            //error_reporting(E_ALL|E_STRICT);
+
+                $dbms='mysql';
+                $host='localhost';
+                $dbName='project';
+                $user='root';
+                $pass='root';
+                $dsn="$dbms:host=$host;dbname=$dbName";
+
+                try {
+                    $dbh = new PDO($dsn, $user, $pass, array(PDO::ATTR_PERSISTENT=>true));
+            ?>
+            <h3>journey record</h3>
+            <table class="table table-bordered table-striped" id="flight">
+                <thead>
+                    <tr>
+                        <td>Date</td>
+                        <td>City</td>
+                        <td>View Detail</td>
+                    </tr>
+                </thead>
+            <?php 
+                $date_temp = array('2019-1-1');
+                foreach($dbh->query('select date,city from journey') as $row){
+                    //$city_temp = array();
+                    $array = $date_temp;
+                    $flag = 0;
+                    array_push($date_temp, $row["date"]);
+                    //print_r($date_temp);
+                    for ($i=0; $i<count($date_temp)-1; $i++){
+                        if ($row["date"] == $date_temp[$i]) {
+                            $flag = 1;
+                            array_pop($date_temp);
+                        } 
+                        //array_push($city_temp, $row["city"]);
+                    }
+                    if ($flag == 1) {
+                        continue;
+                    } else {
+            ?>
+                <tr>
+                    <td><?php echo $row["date"];?></td>
+                    <td><?php echo $row["city"];?></td>
+                    <td>
+                        <a href="journey_modify.php?operate=0&date=<?php echo $row["date"];?>&city=<?php echo $row["city"];?>">
+                            <button class="btn btn-sm btn-primary" id="operate" type="button" name="show">Show Detail</button>
+                        </a>
+                    </td>
+                </tr>
+            <?php
+                    }
+                }
+                $dbh = null;
+            } catch (PDOExecption $e) {
+                die("Error!: ".$e->getMessage()."<br/>");
+            }
+            ?>
+            </table>
+            <button class="btn btn-primary">
+                <a href="journey_modify.php?operate=3" style="color:white">Add new log</a>
+            </button>
         </div>
     </div>
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="../js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="../js/mdb.min.js"></script>
 
     <script>
         $(document).ready(function () {

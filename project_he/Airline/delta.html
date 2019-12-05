@@ -4,25 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Log</title>
+    <title>Delta Air Lines</title>
     <!-- Font Awesome -->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="../css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="../css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/flaticon.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-    <!--<script src="flight.js"></script>-->
-    <!--<script src="../js/angular16.js"></script>-->
     <style>
         body{
-            height:1800px;
+            height:2000px;
         }
         /*nav_panel*/
         #panel{
@@ -66,7 +63,7 @@
         }
         /*top*/
         #top{
-            background: url(../img/5.jpg);
+            background: url(../img/delta/1.jpg);
             height:377px;
         }
         .top2{
@@ -84,8 +81,17 @@
             margin-left: 50px;
         }
         #content{
+            margin-left:300px;
+            height:2000px;
             width:1000px;
+            margin-right:300px;
+        }
+        .content_title{
+            margin-top:50px;
             font-family: 'Roboto Slab', serif;
+        }
+        .img{
+            text-align:center;
         }
     </style>
 </head>
@@ -94,7 +100,7 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark elegant-color-dark">
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="../index.html" style="margin-left:300px">Flight Log</a>
+        <a class="navbar-brand" href="index.html" style="margin-left:300px">Delta Air Lines</a>
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
             aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -171,7 +177,7 @@
                 <a>
                     <p class="underline">Sichuan Airlines&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
-                <a>
+                <a href="delta.html">
                     <p class="underline">Delta Air Lines&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
                 <a>
@@ -187,7 +193,7 @@
                 <a>
                     <p class="underline">Alaska Airlines&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
-                <a>
+                <a href="cathay.html">
                     <p class="underline">Cathay Pacific Airways&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></p>
                 </a>
                 <a>
@@ -220,7 +226,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 top2_title">
-                        <h2>Flight Log</h2>
+                        <h2>Delta Air Lines</h2>
                     </div>
                 </div>
             </div>
@@ -228,105 +234,37 @@
     </div>
 
     <div class="container" id="content">
-        <div style="margin-top:30px">
-            <i class="fa fa-plane" aria-hidden="true" style="font-size: 20px;margin-left:15px;">
-                ABOUT THIS FLIGHT
-            </i>
-        </div>
-        <form action="add_flight.php" method="post">
-            <div class="row">
-                <div class="input-group input-group-lg col-md-12" style="margin-top:10px">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">DATE</span>
-                    </div>
-                    <input id="date" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">FLIGHT#</span>
-                    </div>
-                    <input id="flight" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">DEP-ARR</span>
-                    </div>
-                    <input id="d-a" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                </div>
-                <div class="input-group input-group-lg col-md-12" style="margin-top:10px">
-                    <input id="times" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">FLIGHT WITH</span>
-                    </div>
-                    <input id="code" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                </div>
-                <div class="input-group input-group-lg col-md-12" style="margin-top:10px">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">SEAT#</span>
-                    </div>
-                    <input id="seat" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">CABIN CLASS</span>
-                    </div>
-                    <input id="cabin" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                </div>
-                <div class="input-group input-group-lg col-md-12" style="margin-top:10px">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">DEP GATE</span>
-                    </div>
-                    <input id="gate_d" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">ARR GATE</span>
-                    </div>
-                    <input id="gate_a" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                </div>
-            </div>
-
-            <input id="add" type="button" value="Add Flight">
-            <input id="reset" type="reset" value="Reset">
-        </form>
-
-        <div style="margin-top:30px">
-            <p>about this flight</p>
-            <table class="table table-bordered table-striped" id="flight">
-                <thead>
-                    <tr>
-                        <td>DATE</td>
-                        <td>FLIGHT#</td>
-                        <td>DEP-ARR</td>
-                        <td>TIMES</td>
-                        <td>FLIGHT WITH</td>
-                        <td>SEAT#</td>
-                        <td>CABIN</td>
-                        <td>GATE(DEP)</td>
-                        <td>GATE(ARR)</td>
-                    </tr>
-                </thead>
-            </table>
-            <p>flight info</p>
-            <table class="table table-bordered table-striped" id="plane">
-                <thead>
-                    <tr>
-                        <td>AIRCRAFT</td>
-                        <td>REGO</td>
-                        <td>BLOCK TIME</td>
-                        <td>DISTANCE FLOWN(mi)
-                        </td>
-                        <td>CRUISING ALTITUDE(ft)</td>
-                        <td>PARKING BAY(DEP-ARR)</td>
-                        <td>CHOCKS(DEP-ARR)</td>
-                        <td>RUNAWAY(DEP-ARR)</td>
-                    </tr>
-                </thead>
-            </table>
+        <div class="content_title">
+            <h1>Delta Air Lines</h1>
+            <p>Delta Air Lines, Inc. , often referred to simply as Delta, is a major United States airline, with its
+                headquarters and largest hub at Hartsfield–Jackson Atlanta International Airport in Atlanta, Georgia. The
+                airline, along with its subsidiaries and regional affiliates, operates over 5,400 flights daily and serves an
+                extensive domestic and international network that includes 319 destinations in 54 countries on six continents, as
+                of October 2016. Delta is one of the four founding members of the SkyTeam airline alliance. Regional
+                service is operated under the brand name Delta Connection.<br/>
+                One of the five remaining legacy carriers, Delta is the sixth-oldest operating airline by foundation date, and the
+                oldest airline to still be operating in the United States. The company's history can be traced back to Huff Daland
+                Dusters, founded in 1924 in Macon, Georgia as a crop dusting operation. The company moved to Monroe, Louisiana, and
+                was later renamed Delta Air Services, in reference to the nearby Mississippi Delta region, and commenced passenger
+                services on June 17, 1929. Among predecessors of today's Delta Air Lines, Western Airlines and Northwest Airlines
+                began flying passengers in 1926 and 1927, respectively.<br/>
+                Delta is the world's second largest airline in terms of scheduled passengers carried, revenue passenger-kilometers
+                flown and fleet size. In 2018, Delta ranked No. 75 in the Fortune 500 list of the largest United States
+                corporations by total revenue.
+            </p>
+            <div class="img"><img src="../img/delta/2.jpg" alt="" weight="850" width="650"></div>
         </div>
     </div>
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="../js/popper.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -335,7 +273,6 @@
             });
         });
     </script>
-    
 </body>
 
 </html>
